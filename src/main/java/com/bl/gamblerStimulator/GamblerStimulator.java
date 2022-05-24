@@ -3,12 +3,15 @@ package com.bl.gamblerStimulator;
 *@author : Sadanand Pandey
 * welcome message
 * Finding result of game
+* resign stake on win
+* calculating total winning cost
 *  */
 public class GamblerStimulator {
 
     public static final double INITIAL_STAKE = 100;
     public static final double STAKE_BET = 1;
     public static int stake = 0;
+    public static final int numberOfPlays = 20;
 
     public static void result() {
         boolean resign = false;
@@ -35,6 +38,12 @@ public class GamblerStimulator {
     }
     public static void main(String[] args) {
         System.out.println("---------♥-Welcome To Gambler Stimulator-♥---------");
-        result();
+        int stake = 100;
+        double balance = 0;
+        for(int numberOfDays = 0; numberOfDays < numberOfPlays; numberOfDays++){
+            result();
+            balance = balance + stake;
+        }
+        System.out.println("Total  amount won : " + balance);
     }
 }
